@@ -1,0 +1,16 @@
+.signup_container {
+    max-width: 500px;
+    border: 3px solid var(--clr-darkred);
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px;
+
+}
+
+.signup_section {
+    display: flex;
+    height: 80vh; /* 100% of the viewport height */
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+}

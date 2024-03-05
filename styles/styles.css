@@ -1,0 +1,71 @@
+:root {
+    /* color pallet */
+    --clr-dark: #001427;
+    --clr-light: #F4D58D;
+    --clr-slate400: #F4FFF8;
+    --clr-slate600: #8BAAAD;
+    --clr-slate800: #1C3144;
+    --clr-orange: #d6520b;
+    --clr-darkred: #8d3201;
+    /* https://coolors.co/001427-708d81-f4d58d-bf0603-8d0801 */
+
+    /* sizes */
+    --size--xxs: 0.5rem;
+    --size--xs: 0.75rem;
+    --size--s: 0.875rem;
+    --size--base: 1rem;
+    --size--lg: 1.125rem;
+    --size--xl: 1.25rem;
+    --size--2xl: 1.5rem;
+    --size--3xl: 1.875rem;
+    --size--4xl: 2.25rem;
+    --size--5xl: 3rem;
+    --size--6xl: 3.75rem;
+    --size--7xl: 4.5rem;
+    --size--8xl: 6rem;
+    --size--9xl: 8rem;
+    --size--10xl: 10rem;
+
+}
+
+html {
+    background-color: var(--clr-light);
+    color: var(--clr-slate800)
+}
+
+h1 {
+    color: var(--clr-dark);
+    text-align: center;
+    /* margin: 30px; */
+    padding: 50px 100px, 0px 100px;
+    /* border: 1px solid red; */
+    
+}
+
+form{
+    /* border: 1px solid red; */
+    text-align: left;
+}
+
+input { 
+    background-color: var(--clr-light);
+    border-style: solid;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-color: var(--clr-darkred);
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 7px;
+    background-color: var(--clr-orange);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-slate800);
+}
