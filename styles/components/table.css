@@ -1,0 +1,53 @@
+
+
+.difficulty {
+    grid-area: difficulty;
+}
+
+.bankroll {
+    grid-area: bankroll;
+}
+
+.player1 {
+    grid-area: player1;
+}
+
+.stats {
+    grid-area: stats;
+}
+
+.menu {
+    grid-area: menu;
+}
+
+.decisions {
+    grid-area: decisions;
+}
+
+.dealer {
+    grid-area: dealer;
+}
+
+.table_wrapper {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 2fr repeat(3, 3fr) 2fr;
+    grid-template-rows: 2fr 2fr 1fr;
+    grid-template-areas: 
+    "difficulty . dealer stats menu"
+    ". player2 player1 player3 decisions"
+    "bankroll bankroll . . decisions"
+    ;
+    border: 1px solid red;
+    gap: 10px;
+}
+
+
+
+.child
+{
+    margin: 5px;
+    border: 1px solid black;
+    padding: 1em;
+}
+

@@ -69,3 +69,10 @@ a {
     text-decoration: none;
     color: var(--clr-slate800);
 }
+
+.card {
+    width: 100px;
+}
+.back {
+    width: 103px;
+}
