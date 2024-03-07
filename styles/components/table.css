@@ -1,5 +1,6 @@
 
 
+
 .difficulty {
     grid-area: difficulty;
 }
@@ -28,26 +29,59 @@
     grid-area: dealer;
 }
 
+.player2 {
+    grid-area: player2;
+}
+
+.player3 {
+    grid-area: player3;
+}
+
 .table_wrapper {
     display: grid;
     width: 100%;
+    
     grid-template-columns: 2fr repeat(3, 3fr) 2fr;
-    grid-template-rows: 2fr 2fr 1fr;
-    grid-template-areas: 
-    "difficulty . dealer stats menu"
-    ". player2 player1 player3 decisions"
-    "bankroll bankroll . . decisions"
-    ;
+    grid-template-rows: 250px 300px 200px;
+    grid-template-areas:
+        "difficulty . dealer stats menu"
+        ". player2 player1 player3 decisions"
+        "bankroll bankroll . . decisions";
     border: 1px solid red;
     gap: 10px;
 }
 
 
 
-.child
-{
+.child {
     margin: 5px;
     border: 1px solid black;
     padding: 1em;
 }
 
+circle {
+    stroke: var(--clr-darkred);
+    fill: transparent;
+    stroke-width: 2;
+}
+
+.svg_circle {
+    /* border: 1px solid red; */
+    width: 100px;
+    height: 100px;
+}
+
+.svg_rect {
+    /* border: 1px solid red; */
+    width: 100px;
+}
+
+rect {
+    fill: transparent;
+    stroke: var(--clr-darkred);
+    stroke-width: 3;
+}
+
+.dashed {
+    stroke-dasharray: 6, 10;
+}
