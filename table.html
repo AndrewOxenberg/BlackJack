@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="./styles/components/table.css">
+    <link rel="stylesheet" href="./styles/components/menu.css">
 
     <title>BlackJack Mastery</title>
 </head>
@@ -16,34 +17,43 @@
 
 
         <div class="child difficulty">
-            <button class="table_difficulty">Easy</button>
+            <button class="table_difficulty">Difficulty: Easy</button>
         </div>
         <!-- <div class="child"></div> -->
         <div class="child bankroll">
             <h3 class="table_bankroll">Bankroll: </h3>
+
+            <div class="bankroll_chips">
+                <img class="chips" src="images/Default_Chips/1_chip.png" alt="1$ Chip">
+                <img class="chips" src="images/Default_Chips/5_chip.png" alt="5$ Chip">
+                <img class="chips" src="images/Default_Chips/10_chip.png" alt="10$ Chip">
+                <img class="chips" src="images/Default_Chips/25_chip.png" alt="25$ Chip">
+                <img class="chips" src="images/Default_Chips/100_chip.png" alt="100$ Chip">
+            </div>
         </div>
 
         <div class="child dealer">
             <div class="table_dealers_cards">
-                <img class="card" src="images/Default_Deck/6_of_spades.png" alt="6ofclubs">
-                <img class="back" src="images/Default_Deck/back.png" alt="back">
+                <img class="card card1" src="images/Default_Deck/6_of_spades.png" alt="6ofclubs">
+                <img class="back card2" src="images/Default_Deck/back.png" alt="back">
+                <!-- need to deal an imaginary card to represent the dealer's hand -->
             </div>
         </div>
         <div class="child player1">
 
             <div class="player1_card_rect">
                 <svg class="svg_rect">
-                    <rect class="solid" x="0" y="0" rx="10" ry="10" width="100" height="150"></rect>
+                    <rect class="solid" x="0" y="0" rx="10" ry="10"></rect>
                 </svg>
             </div>
 
             <div class="table_players_hands">
-                <img class="card" src="images/Default_Deck/king_of_hearts2.png" alt="suicide king">
-                <img class="card" src="images/Default_Deck/ace_of_spades2.png" alt="ace">
+                <img class="card card1" src="images/Default_Deck/king_of_hearts2.png" alt="suicide king">
+                <img class="card card2" src="images/Default_Deck/ace_of_spades2.png" alt="ace">
             </div>
             <div class="player1_bet_circle">
                 <svg class="svg_circle">
-                    <circle class="solid" cx="50" cy="50" r="25"/>
+                    <circle class="solid" cx="30" cy="30" r="25"/>
                 </svg>
             </div>
         </div>
@@ -63,13 +73,13 @@
 
             <div class="player2_card_rect">
                 <svg class="svg_rect">
-                    <rect class="dashed" x="0" y="0" rx="10" ry="10" width="100" height="150"></rect>
+                    <rect class="dashed" x="0" y="0" rx="10" ry="10"></rect>
                 </svg>
             </div>
 
             <div class="player2_bet_circle">
                 <svg class="svg_circle">
-                    <circle class="dashed" cx="50" cy="50" r="25"/>
+                    <circle class="dashed" cx="30" cy="30" r="25"/>
                 </svg>
             </div>
         </div>
@@ -77,13 +87,13 @@
 
             <div class="player3_card_rect">
                 <svg class="svg_rect">
-                    <rect class="dashed" x="0" y="0" rx="10" ry="10" width="100" height="150"></rect>
+                    <rect class="dashed" x="0" y="0" rx="10" ry="10"></rect>
                 </svg>
             </div>
 
             <div class="player3_bet_circle">
                 <svg class="svg_circle">
-                    <circle class="dashed" cx="50" cy="50" r="25"/>
+                    <circle class="dashed" cx="30" cy="30" r="25"/>
                 </svg>
             </div>
         </div>
@@ -93,38 +103,49 @@
 
 
         <div class="child menu">
-            <nav class="navbar-container">
-                <a href="#">Setting</a>
-                <a href="#">Stats</a>
-                <a href="#">Achievements</a>
-                <a href="#">Leaderboard</a>
-                <a href="#">About</a>
-                <a href="index.html">Logout</a>
-            </nav>
+            <div class="dropdown">
+                <button class="hamburger_button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="hamburger" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 
+                        .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                </button>
+                <nav class="navbar-container">
+                    <a class="navbar_attribute" href="#">Settings</a>
+                    <a class="navbar_attribute" href="#">Stats</a>
+                    <a class="navbar_attribute" href="#">Achievements</a>
+                    <a class="navbar_attribute" href="#">Leaderboard</a>
+                    <a class="navbar_attribute" href="#">About</a>
+                    <a class="navbar_attribute" href="index.html">Logout</a>
+                </nav>
+            </div>
         </div>
+
+
+
         <div class="child decisions">
             <ul class="table_all_decisions">
                 <li class="table_decision">
-                    <button>Hit</button>
+                    <button class="decision_button">Hit</button>
                 </li>
                 <li class="table_decision">
-                    <button>Stand</button>
+                    <button class="decision_button">Stand</button>
                 </li>
                 <li class="table_decision">
-                    <button>Split</button>
+                    <button class="decision_button">Split</button>
                 </li>
                 <li class="table_decision">
-                    <button>Double Down</button>
+                    <button class="decision_button">Double Down</button>
                 </li>
                 <li class="table_decision">
-                    <button>Surrender</button>
+                    <button class="decision_button">Surrender</button>
                 </li>
                 <li class="table_decision">
-                    <button>Insurance</button>
+                    <button class="decision_button">Insurance</button>
                 </li>
             </ul>
         </div>
-        <div class="child"></div>
+
 
     </div>
 

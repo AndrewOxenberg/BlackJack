@@ -71,8 +71,17 @@ a {
 }
 
 .card {
+    /* border: 1px solid red; */
     width: 100px;
 }
 .back {
     width: 103px;
+    border-radius: 5px;
+}
+
+.chips {
+    border-radius: 100%;
+    margin: 10px;
+    width: 75px;
+    height: 75px;
 }

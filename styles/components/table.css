@@ -37,17 +37,23 @@
     grid-area: player3;
 }
 
+.player1, .player2, .player3, .dealer, .decisions, .difficulty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+}
+
 .table_wrapper {
     display: grid;
     width: 100%;
-    
     grid-template-columns: 2fr repeat(3, 3fr) 2fr;
-    grid-template-rows: 250px 300px 200px;
+    grid-template-rows: 240px 300px 240px;
     grid-template-areas:
         "difficulty . dealer stats menu"
         ". player2 player1 player3 decisions"
         "bankroll bankroll . . decisions";
-    border: 1px solid red;
+    /* border: 1px solid red; */
     gap: 10px;
 }
 
@@ -57,31 +63,74 @@
     margin: 5px;
     border: 1px solid black;
     padding: 1em;
+    position: relative;
 }
 
 circle {
     stroke: var(--clr-darkred);
     fill: transparent;
     stroke-width: 2;
+
+
 }
 
 .svg_circle {
     /* border: 1px solid red; */
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
 }
 
 .svg_rect {
     /* border: 1px solid red; */
-    width: 100px;
+    width: 110px;
+    height: 153px;
 }
 
 rect {
+
     fill: transparent;
     stroke: var(--clr-darkred);
     stroke-width: 3;
+    height: 153px;
+    width: 110px;
 }
 
 .dashed {
-    stroke-dasharray: 6, 10;
+    stroke-dasharray: 10;
+}
+
+.table_players_hands, .table_dealers_cards {
+    position: absolute;
+    top: 40px; 
+    left: 95px; 
+}
+
+.card1 {
+    position: absolute;
+    left: 20px;
+}
+
+.card2 {
+    position: absolute;
+    left: 60px;
+}
+
+
+.table_all_decisions {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.decision_button {
+    width: 75px;
+    text-align: center;
+}
+
+.table_decision {
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
