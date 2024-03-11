@@ -1,0 +1,20 @@
+
+
+.dropdown {
+    border: 1px solid red;
+}
+
+
+/* Add styles for the visible state, adjust as needed */
+.navbar_container.active {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff; /* Customize background color */
+    position: absolute;
+    top: 60px; /* Adjust the top position based on your layout */
+    right: 0;
+    z-index: 1;
+    border: 1px solid #ccc; /* Optional: Add border for styling */
+    padding: 10px; /* Optional: Add padding for styling */
+}
+
