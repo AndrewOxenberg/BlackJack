@@ -1,20 +1,68 @@
-
+html {
+    /* background-color: rgba(0, 0, 0, 0.3); */
+}
 
 .dropdown {
-    border: 1px solid red;
+   
+    border-radius: 10px;
+    z-index: 1;
+    /* background-color: var(--clr-slate600); */
+    /* border: 3px solid var(--clr-darkred); */
 }
 
 
-/* Add styles for the visible state, adjust as needed */
-.navbar_container.active {
+.navbar_container {
+    position: relative;
+    top: -500px;
     display: flex;
     flex-direction: column;
-    background-color: #fff; /* Customize background color */
-    position: absolute;
-    top: 60px; /* Adjust the top position based on your layout */
-    right: 0;
-    z-index: 1;
-    border: 1px solid #ccc; /* Optional: Add border for styling */
-    padding: 10px; /* Optional: Add padding for styling */
+    padding: 10px; 
+    border: 3px solid var(--clr-darkred);
+    border-radius: 10px;
+    transition: 0.3s;
+
 }
+
+.navbar_attribute {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    color: black;
+}
+
+.navbar_container.show_navbar {
+    top: 0px;
+    transition: 0.3s;
+    background-color: var(--clr-slate400);
+    opacity: 0.6;
+}
+
+.overlay {
+    display: fixed;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s;
+
+
+}
+
+.overlay.active {
+    display: fixed;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.5);   
+    /* mix-blend-mode: darken; */
+    transition: 0.2s;
+    z-index: 99;
+}
+
+img.active, .decision_button.active, .table_difficulty_button.active {
+    transition: 0.2s;
+    opacity: 0;
+
+
+}
+
+
+
 

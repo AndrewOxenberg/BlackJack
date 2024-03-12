@@ -23,6 +23,7 @@
 
 .decisions {
     grid-area: decisions;
+    z-index: -1;
 }
 
 .dealer {
@@ -37,7 +38,7 @@
     grid-area: player3;
 }
 
-.player1, .player2, .player3, .dealer, .decisions, .difficulty {
+.player1, .player2, .player3, .dealer, .decisions, .difficulty, .card1 {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center vertically */
@@ -48,7 +49,7 @@
     display: grid;
     width: 100%;
     grid-template-columns: 2fr repeat(3, 3fr) 2fr;
-    grid-template-rows: 240px 300px 240px;
+    grid-template-rows: 240px 300px 210px;
     grid-template-areas:
         "difficulty . dealer stats menu"
         ". player2 player1 player3 decisions"
@@ -60,11 +61,14 @@
 
 
 .child {
+    
     margin: 5px;
     border: 1px solid black;
     padding: 1em;
     position: relative;
+
 }
+
 
 circle {
     stroke: var(--clr-darkred);
@@ -104,22 +108,24 @@ rect {
 
 .table_players_hands, .table_dealers_cards {
     position: absolute;
-    top: 40px; 
-    left: 95px; 
+    top: 14%; 
+    left: 35%;
 }
 
 .card1 {
     position: absolute;
-    left: 20px;
+    /* left: 20px; */
 }
 
 .card2 {
     position: absolute;
-    left: 60px;
+    left: 20px;
 }
 
 
 .table_all_decisions {
+    /* border: 1px solid red; */
+    z-index: -1;
     list-style-type: none;
     margin: 0px;
     padding: 0px;
@@ -133,4 +139,13 @@ rect {
 .table_decision {
     padding-top: 15px;
     padding-bottom: 15px;
+}
+
+.player_total, .dealer_total {
+
+    position: absolute;
+    top: 20%;
+    transform: translateY(-50%); 
+    left: 15%; 
+    font-size: var(--size--lg);
 }

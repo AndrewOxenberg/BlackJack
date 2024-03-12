@@ -8,145 +8,184 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="./styles/components/table.css">
     <link rel="stylesheet" href="./styles/components/menu.css">
+    <link rel="stylesheet" href="./styles/components/difficulty_popup.css">
 
     <title>BlackJack Mastery</title>
 </head>
 
 <body>
-    <div class="table_wrapper">
+    <div class="overlay">
+        <div class="table_wrapper">
 
 
-        <div class="child difficulty">
-            <button class="table_difficulty">Difficulty: Easy</button>
-        </div>
-        <!-- <div class="child"></div> -->
-        <div class="child bankroll">
-            <h3 class="table_bankroll">Bankroll: </h3>
-
-            <div class="bankroll_chips">
-                <img class="chips" src="images/Default_Chips/1_chip.png" alt="1$ Chip">
-                <img class="chips" src="images/Default_Chips/5_chip.png" alt="5$ Chip">
-                <img class="chips" src="images/Default_Chips/10_chip.png" alt="10$ Chip">
-                <img class="chips" src="images/Default_Chips/25_chip.png" alt="25$ Chip">
-                <img class="chips" src="images/Default_Chips/100_chip.png" alt="100$ Chip">
+            <div class="child difficulty">
+                <button class="table_difficulty_button" onclick="showPopup()">Difficulty: Easy</button>
             </div>
-        </div>
+            <!-- <div class="child"></div> -->
+            <div class="child bankroll">
+                <h3 class="table_bankroll">Bankroll: </h3>
 
-        <div class="child dealer">
-            <div class="table_dealers_cards">
-                <img class="card card1" src="images/Default_Deck/6_of_spades.png" alt="6ofclubs">
-                <img class="back card2" src="images/Default_Deck/back.png" alt="back">
-                <!-- need to deal an imaginary card to represent the dealer's hand -->
-            </div>
-        </div>
-        <div class="child player1">
-
-            <div class="player1_card_rect">
-                <svg class="svg_rect">
-                    <rect class="solid" x="0" y="0" rx="10" ry="10"></rect>
-                </svg>
+                <div class="bankroll_chips">
+                    <img class="chips" src="images/Default_Chips/1_chip.png" alt="1$ Chip">
+                    <img class="chips" src="images/Default_Chips/5_chip.png" alt="5$ Chip">
+                    <img class="chips" src="images/Default_Chips/10_chip.png" alt="10$ Chip">
+                    <img class="chips" src="images/Default_Chips/25_chip.png" alt="25$ Chip">
+                    <img class="chips" src="images/Default_Chips/100_chip.png" alt="100$ Chip">
+                </div>
             </div>
 
-            <div class="table_players_hands">
-                <img class="card card1" src="images/Default_Deck/king_of_hearts2.png" alt="suicide king">
-                <img class="card card2" src="images/Default_Deck/ace_of_spades2.png" alt="ace">
+            <div class="child dealer">
+                <div>
+                    <p class="dealer_total">6</p>
+                </div>
+                <div class="table_dealers_cards">
+                    <img class="card card1" src="images/Default_Deck/6_of_spades.png" alt="6ofclubs">
+                    <img class="back card2" src="images/Default_Deck/back.png" alt="back">
+                    <!-- need to deal an imaginary card to represent the dealer's hand -->
+                </div>
             </div>
-            <div class="player1_bet_circle">
-                <svg class="svg_circle">
-                    <circle class="solid" cx="30" cy="30" r="25"/>
-                </svg>
-            </div>
-        </div>
-        <!-- <div class="child"></div> -->
-
-
-
-
-        <div class="child stats">
-            <div class="table_stats">
-                <p>Hands: X</p>
-                <p>Streak: X</p>
-                <p>Accuracy: X</p>
-            </div>
-        </div>
-        <div class="child player2">
-
-            <div class="player2_card_rect">
-                <svg class="svg_rect">
-                    <rect class="dashed" x="0" y="0" rx="10" ry="10"></rect>
-                </svg>
-            </div>
-
-            <div class="player2_bet_circle">
-                <svg class="svg_circle">
-                    <circle class="dashed" cx="30" cy="30" r="25"/>
-                </svg>
-            </div>
-        </div>
-        <div class="child player3">
-
-            <div class="player3_card_rect">
-                <svg class="svg_rect">
-                    <rect class="dashed" x="0" y="0" rx="10" ry="10"></rect>
-                </svg>
-            </div>
-
-            <div class="player3_bet_circle">
-                <svg class="svg_circle">
-                    <circle class="dashed" cx="30" cy="30" r="25"/>
-                </svg>
-            </div>
-        </div>
-
-
-
-
-
-        <div class="child menu">
-            <div class="dropdown">
-                <button class="hamburger_button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="hamburger" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 
-                        .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+            <div class="child player1">
+                <div>
+                    <p class="player_total">21</p>
+                </div>
+                <div class="player1_card_rect">
+                    <svg class="svg_rect">
+                        <rect class="solid" x="0" y="0" rx="10" ry="10"></rect>
                     </svg>
-                </button>
-                <nav class="navbar_container">
-                    <a class="navbar_attribute" href="#">Settings</a>
-                    <a class="navbar_attribute" href="#">Stats</a>
-                    <a class="navbar_attribute" href="#">Achievements</a>
-                    <a class="navbar_attribute" href="#">Leaderboard</a>
-                    <a class="navbar_attribute" href="#">About</a>
-                    <a class="navbar_attribute" href="index.html">Logout</a>
-                </nav>
+                </div>
+
+                <div class="table_players_hands">
+                    <img class="card card1" src="images/Default_Deck/king_of_hearts2.png" alt="suicide king">
+                    <img class="card card2" src="images/Default_Deck/ace_of_spades2.png" alt="ace">
+                </div>
+                <div class="player1_bet_circle">
+                    <svg class="svg_circle">
+                        <circle class="solid" cx="30" cy="30" r="25" />
+                    </svg>
+                </div>
             </div>
+            <!-- <div class="child"></div> -->
+
+
+
+
+            <div class="child stats">
+                <div class="table_stats">
+                    <p>Hands: X</p>
+                    <p>Streak: X</p>
+                    <p>Accuracy: X</p>
+                </div>
+            </div>
+            <div class="child player2">
+
+                <div class="player2_card_rect">
+                    <svg class="svg_rect">
+                        <rect class="dashed" x="0" y="0" rx="10" ry="10"></rect>
+                    </svg>
+                </div>
+
+                <div class="player2_bet_circle">
+                    <svg class="svg_circle">
+                        <circle class="dashed" cx="30" cy="30" r="25" />
+                    </svg>
+                </div>
+            </div>
+            <div class="child player3">
+
+                <div class="player3_card_rect">
+                    <svg class="svg_rect">
+                        <rect class="dashed" x="0" y="0" rx="10" ry="10"></rect>
+                    </svg>
+                </div>
+
+                <div class="player3_bet_circle">
+                    <svg class="svg_circle">
+                        <circle class="dashed" cx="30" cy="30" r="25" />
+                    </svg>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="child menu">
+                <div class="dropdown">
+                    <button class="hamburger_button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="hamburger" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 
+                        .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                        </svg>
+                    </button>
+                    <nav class="navbar_container">
+                        <a class="navbar_attribute" href="#">Settings</a>
+                        <a class="navbar_attribute" href="#">Stats</a>
+                        <a class="navbar_attribute" href="#">Achievements</a>
+                        <a class="navbar_attribute" href="#">Leaderboard</a>
+                        <a class="navbar_attribute" href="#">About</a>
+                        <a class="navbar_attribute" href="index.html">Logout</a>
+                    </nav>
+                </div>
+            </div>
+
+
+
+            <div class="child decisions">
+                <ul class="table_all_decisions">
+                    <li class="table_decision">
+                        <button class="decision_button">Hit</button>
+                    </li>
+                    <li class="table_decision">
+                        <button class="decision_button">Stand</button>
+                    </li>
+                    <li class="table_decision">
+                        <button class="decision_button">Split</button>
+                    </li>
+                    <li class="table_decision">
+                        <button class="decision_button">Double Down</button>
+                    </li>
+                    <li class="table_decision">
+                        <button class="decision_button">Surrender</button>
+                    </li>
+                    <li class="table_decision">
+                        <button class="decision_button">Insurance</button>
+                    </li>
+                </ul>
+            </div>
+
+
         </div>
 
+    </div>
 
-
-        <div class="child decisions">
-            <ul class="table_all_decisions">
-                <li class="table_decision">
-                    <button class="decision_button">Hit</button>
-                </li>
-                <li class="table_decision">
-                    <button class="decision_button">Stand</button>
-                </li>
-                <li class="table_decision">
-                    <button class="decision_button">Split</button>
-                </li>
-                <li class="table_decision">
-                    <button class="decision_button">Double Down</button>
-                </li>
-                <li class="table_decision">
-                    <button class="decision_button">Surrender</button>
-                </li>
-                <li class="table_decision">
-                    <button class="decision_button">Insurance</button>
-                </li>
-            </ul>
+    <div class="popup difficulty_popup">
+        <h2>Select Difficulty</h2>
+        <div class="tabs">
+            <button class="dif_tab_button_easy" onclick="openTab(event, 'easy')">Easy</button>
+            <button class="dif_tab_button_medium" onclick="openTab(event, 'medium')">Medium</button>
+            <button class="dif_tab_button_hard" onclick="openTab(event, 'hard')">Hard</button>
         </div>
 
-
+        <div id="easy" class="tab">
+            <h3>Easy</h3>
+            <p>Master BlackJack Strategy</p>
+            <button class="button">Select Easy</button>
+        </div>
+        <div id="medium" class="tab">
+            <h3>Medium</h3>
+            <p>Master Card Counting</p>
+            <p>Unlocks after 100 streak in Easy</p>
+            <button class="button">Select Medium</button>
+        </div>
+        <div id="hard" class="tab">
+            <h3>Hard</h3>
+            <p>Master Strategy, Card Counting, and Deviations</p>
+            <p>Unlocks after 100 streak in Medium</p>
+            <button class="button">Select Hard</button>
+        </div>
+        <button class="close_button">X</button>
     </div>
 
 

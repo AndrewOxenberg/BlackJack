@@ -2,9 +2,9 @@
     /* color pallet */
     --clr-dark: #001427;
     --clr-light: #F4D58D;
-    --clr-slate400: #F4FFF8;
-    --clr-slate600: #8BAAAD;
-    --clr-slate800: #1C3144;
+    --clr-slate400: #dedede;
+    --clr-slate600: #6a6e6e;
+    --clr-slate800: #13212e;
     --clr-orange: #d6520b;
     --clr-darkred: #8d3201;
     /* https://coolors.co/001427-708d81-f4d58d-bf0603-8d0801 */
@@ -30,11 +30,13 @@
 
 html {
     background-color: var(--clr-light);
-    color: var(--clr-slate800)
+    color: var(--clr-dark);
+    font-weight: 300;
 }
 
 h1 {
     color: var(--clr-dark);
+    font-weight: 300;
     text-align: center;
     /* margin: 30px; */
     padding: 50px 100px, 0px 100px;
@@ -67,7 +69,7 @@ button {
 
 a {
     text-decoration: none;
-    color: var(--clr-slate800);
+    color: var(--clr-dark)
 }
 
 .card {
@@ -85,3 +87,4 @@ a {
     width: 75px;
     height: 75px;
 }
+
