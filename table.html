@@ -19,7 +19,7 @@
 
 
             <div class="child difficulty">
-                <button class="table_difficulty_button" onclick="showPopup()">Difficulty: Easy</button>
+                <button class="table_difficulty_button">Difficulty: <span class="difficulty_label">Easy</span></button>
             </div>
             <!-- <div class="child"></div> -->
             <div class="child bankroll">
@@ -162,29 +162,33 @@
 
     <div class="popup difficulty_popup">
         <h2>Select Difficulty</h2>
-        <div class="tabs">
-            <button class="dif_tab_button_easy" onclick="openTab(event, 'easy')">Easy</button>
-            <button class="dif_tab_button_medium" onclick="openTab(event, 'medium')">Medium</button>
-            <button class="dif_tab_button_hard" onclick="openTab(event, 'hard')">Hard</button>
+        <div class="choice_container">
+            <button class="choiceBtn dif_tab_button_easy">Easy</button>
+            <button class="choiceBtn dif_tab_button_medium">Medium</button>
+            <button class="choiceBtn dif_tab_button_hard">Hard</button>
         </div>
 
-        <div id="easy" class="tab">
-            <h3>Easy</h3>
-            <p>Master BlackJack Strategy</p>
-            <button class="button">Select Easy</button>
+        <div class="diff_popup_container">
+            <div id="easy" class="tab">
+                <h3>Easy</h3>
+                <p>Master BlackJack Strategy</p>
+                <p>Make the Right Decisions to Play the Hand Regardless of the Result</p>
+                <button class="select_dif_button_easy">Select Easy</button>
+            </div>
+            <div id="medium" class="tab">
+                <h3>Medium</h3>
+                <p>Master Card Counting</p>
+                <p>Unlocks after 100 streak in Easy</p>
+                <button class="select_dif_button_medium">Select Medium</button>
+            </div>
+            <div id="hard" class="tab">
+                <h3>Hard</h3>
+                <p>Master Strategy, Card Counting, and Deviations</p>
+                <p>Unlocks after 100 streak in Medium</p>
+                <button class="select_dif_button_hard">Select Hard</button>
+            </div>
         </div>
-        <div id="medium" class="tab">
-            <h3>Medium</h3>
-            <p>Master Card Counting</p>
-            <p>Unlocks after 100 streak in Easy</p>
-            <button class="button">Select Medium</button>
-        </div>
-        <div id="hard" class="tab">
-            <h3>Hard</h3>
-            <p>Master Strategy, Card Counting, and Deviations</p>
-            <p>Unlocks after 100 streak in Medium</p>
-            <button class="button">Select Hard</button>
-        </div>
+        
         <button class="close_button">X</button>
     </div>
 

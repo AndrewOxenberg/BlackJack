@@ -4,11 +4,19 @@ let navbar = document.querySelector('.navbar_container')
 let overlay = document.querySelector('.overlay')
 let imgOverlays = document.querySelectorAll('img')
 let decision_button = document.querySelectorAll('.decision_button')
-let popupTrigger = document.querySelector('.table_difficulty_button');
+let popupTrigger = document.querySelector('.table_difficulty_button')
+let closeButton = document.querySelector('.close_button')
 
-let difficultySelectorEasy = document.querySelector('.dif_tab_button_easy');
-let difficultySelectorMedium = document.querySelector('.dif_tab_button_medium');
-let difficultySelectorHard = document.querySelector('.dif_tab_button_hard');
+let difficultySelectorEasy = document.querySelector('.dif_tab_button_easy')
+let difficultySelectorMedium = document.querySelector('.dif_tab_button_medium')
+let difficultySelectorHard = document.querySelector('.dif_tab_button_hard')
+
+let difSelectButtonEasy = document.querySelector('.select_dif_button_easy')
+let difSelectButtonMedium = document.querySelector('.select_dif_button_medium')
+let difSelectButtonHard = document.querySelector('.select_dif_button_hard')
+let difficultyLabel = document.querySelector('.difficulty_label')
+
+
 
 settings.addEventListener('click', () => {
 
@@ -17,11 +25,8 @@ settings.addEventListener('click', () => {
     imgOverlays.forEach(img => img.classList.toggle('active')); // Toggle for each image
     decision_button.forEach(decision_button => decision_button.classList.toggle('active')); // Toggle for each image
     popupTrigger.classList.toggle('active')
-
-
-
-  
 })
+
 
 
 //popup
@@ -33,23 +38,26 @@ popupTrigger.addEventListener('click', () => {
 
     if (popup.style.display === 'none'|| !overlay.classList.contains('active')) {
         toggleBackground()
+        settings.classList.toggle('active')
     }
     popup.style.display = 'block'
-    openTab('easy')
+    openTab(difficultyLabel.innerText.toLowerCase())
 })
 
 //close popup from X button
-let closeButton = document.querySelector('.close_button')
-closeButton.addEventListener('click', () => {
 
 
+
+
+    function closePopup() {
     if (popup.style.display === 'block' || overlay.classList.contains('active')) {
         toggleBackground()
+        settings.classList.toggle('active')
     }
     popup.style.display = 'none'
+    }
 
 
-})
 
 
 function openTab(tabName) {
@@ -69,15 +77,17 @@ function openTab(tabName) {
 
 
 
-difficultySelectorEasy.addEventListener('click', openTab('easy'));;
+difficultySelectorEasy.addEventListener('click', () => {
+    openTab('easy')
+  })
 
 difficultySelectorMedium.addEventListener('click', () => {
-  openTab('medium');
-});
+  openTab('medium')
+})
 
 difficultySelectorHard.addEventListener('click', () => {
-  openTab('hard');
-});
+  openTab('hard')
+})
 
 function toggleBackground() {
     overlay.classList.toggle('active')
@@ -86,5 +96,19 @@ function toggleBackground() {
     popupTrigger.classList.toggle('active')
 }
 
+//selcting and storing difficulty
+difSelectButtonEasy.addEventListener('click', () => {
+  difficultyLabel.innerText = 'Easy'
+  closePopup()
+})
+difSelectButtonMedium.addEventListener('click', () => {
+    difficultyLabel.innerText = 'Medium'
+    closePopup()
+})
 
+difSelectButtonHard.addEventListener('click', () => {
+  difficultyLabel.innerText = 'Hard'
+  closePopup()
+})
 
+closeButton.addEventListener('click', closePopup);
