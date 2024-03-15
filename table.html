@@ -154,68 +154,83 @@
                     </li>
                 </ul>
             </div>
-
-
         </div>
-
     </div>
 
-    <div class="popup difficulty_popup">
-        <h2>Select Difficulty</h2>
-        <div class="choice_container">
-            <button class="choiceBtn dif_tab_button_easy">Easy</button>
-            <button class="choiceBtn dif_tab_button_medium">Medium</button>
-            <button class="choiceBtn dif_tab_button_hard">Hard</button>
-            <button class="choiceBtn dif_tab_button_expert">Expert</button>
-            <button class="choiceBtn dif_tab_button_master">Master</button>
-            <button class="choiceBtn dif_tab_button_sandbox">Sandbox</button>
+    <div class="popup_container">
+        <div class="popup difficulty_popup" id="popup1">
+            <h2>Select Difficulty</h2>
+            <div class="choice_container">
+                <button class="choiceBtn dif_tab_button_easy">Easy</button>
+                <button class="choiceBtn dif_tab_button_medium">Medium</button>
+                <button class="choiceBtn dif_tab_button_hard">Hard</button>
+            </div>
+
+            <div class="diff_popup_container">
+                <div id="easy" class="tab">
+                    <h3>Easy</h3>
+                    <p>Master BlackJack Strategy</p>
+                    <p>Make the Right Decisions to Play the Hand Regardless of the Result</p>
+                    <button class="select_dif_button_easy">Select Easy</button>
+                </div>
+                <div id="medium" class="tab">
+                    <h3>Medium</h3>
+                    <p>Master Card Counting</p>
+                    <p>Unlocks after 100 streak in Easy</p>
+                    <button class="select_dif_button_medium">Select Medium</button>
+                </div>
+                <div id="hard" class="tab">
+                    <h3>Hard</h3>
+                    <p>Master Strategy, Card Counting, and Deviations</p>
+                    <p>Unlocks after 100 streak in Medium</p>
+                    <button class="select_dif_button_hard">Select Hard</button>
+                </div>
+            </div>
+
+            <button class="close_button">X</button>
+            <button class="arrow_button next_button">►</button>
         </div>
 
-        <div class="diff_popup_container">
-            <div id="easy" class="tab">
-                <h3>Easy</h3>
-                <p>Master BlackJack Strategy</p>
-                <p>Make the Right Decisions to Play the Hand Regardless of the Result</p>
-                <button class="select_dif_button_easy">Select Easy</button>
-            </div>
-            <div id="medium" class="tab">
-                <h3>Medium</h3>
-                <p>Master Card Counting</p>
-                <p>Unlocks after 100 streak in Easy</p>
-                <button class="select_dif_button_medium">Select Medium</button>
-            </div>
-            <div id="hard" class="tab">
-                <h3>Hard</h3>
-                <p>Master Strategy, Card Counting, and Deviations</p>
-                <p>Unlocks after 100 streak in Medium</p>
-                <button class="select_dif_button_hard">Select Hard</button>
-            </div>
-            <!-- 3 harder difficulties -->
-            <div id="expert" class="tab">
-                <h3>Expert</h3>
-                <p>Everything in Hard with 2nd hand and managing bets</p>
-                <p>Unlocks after 250 streak in Hard</p>
-                <button class="select_dif_button_expert">Select Expert</button>
-            </div>
-            <div id="master" class="tab">
-                <h3>Master</h3>
-                <p>Everything in Expert plus 3rd hand and speed of play</p>
-                <p>Unlocks after 500 streak in Expert</p>
-                <button class="select_dif_button_master">Select Master</button>
-            </div>
-            <div id="sandbox" class="tab">
-                <h3>Sandbox</h3>
-                <p>Practice without Consequences</p>
-                <p>Unlocks after 100 streak in Master</p>
-                <button class="select_dif_button_sandbox">Select Sandbox</button>
-            </div>
-        </div>
-        
-        <button class="close_button">X</button>
 
-        <button class="arrow_button prev_button">◄</button>
-        <button class="arrow_button next_button">►</button>
+
+        <div class="popup difficulty_popup" id="popup2">
+            <h2>Select Difficulty</h2>
+            <div class="choice_container">
+                <button class="choiceBtn dif_tab_button_expert">Expert</button>
+                <button class="choiceBtn dif_tab_button_master">Master</button>
+                <button class="choiceBtn dif_tab_button_sandbox">Sandbox</button>
+            </div>
+
+
+            <div class="diff_popup_container">
+                <!-- 3 harder difficulties -->
+                <div id="expert" class="tab">
+                    <h3>Expert</h3>
+                    <p>Everything in Hard with 2nd hand and managing bets</p>
+                    <p>Unlocks after 250 streak in Hard</p>
+                    <button class="select_dif_button_expert">Select Expert</button>
+                </div>
+                <div id="master" class="tab">
+                    <h3>Master</h3>
+                    <p>Everything in Expert plus 3rd hand and speed of play</p>
+                    <p>Unlocks after 500 streak in Expert</p>
+                    <button class="select_dif_button_master">Select Master</button>
+                </div>
+                <div id="sandbox" class="tab">
+                    <h3>Sandbox</h3>
+                    <p>Practice without Consequences</p>
+                    <p>Unlocks after 100 streak in Master</p>
+                    <button class="select_dif_button_sandbox">Select Sandbox</button>
+                </div>
+            </div>
+
+            <button class="arrow_button prev_button">◄</button>
+            <button class="close_button">X</button>
+
+
+        </div>
     </div>
+
 
 
     <script type="module" src="./src/main.js"></script>
