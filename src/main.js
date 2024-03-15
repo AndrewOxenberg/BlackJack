@@ -5,10 +5,10 @@ let overlay = document.querySelector('.overlay')
 let imgOverlays = document.querySelectorAll('img')
 let decision_button = document.querySelectorAll('.decision_button')
 let popupTrigger = document.querySelector('.table_difficulty_button')
-let closeButton = document.querySelector('.close_button')
+let closeButton = document.querySelectorAll('.close_button')
 let dealerTotal = document.querySelector('.dealer_total')
 let playerTotal = document.querySelector('.player_total')
-let popup = document.querySelector('.difficulty_popup');
+let popup = document.querySelectorAll('.difficulty_popup');
 
 let difficultySelectorEasy = document.querySelector('.dif_tab_button_easy')
 let difficultySelectorMedium = document.querySelector('.dif_tab_button_medium')
@@ -32,50 +32,42 @@ let difficultyLabel = document.querySelector('.difficulty_label')
 let currentIndex = 0;
 
 
-
-
 showTab(currentIndex);
-
-
 
 
 settings.addEventListener('click', () => {
 
-    navbar.classList.toggle('show_navbar')
-    overlay.classList.toggle('active')
-    imgOverlays.forEach(img => img.classList.toggle('active')); // Toggle for each image
-    decision_button.forEach(decision_button => decision_button.classList.toggle('active')); // Toggle for each image
-    popupTrigger.classList.toggle('active')
-    playerTotal.classList.toggle('active')
-    dealerTotal.classList.toggle('active')
+  navbar.classList.toggle('show_navbar')
+  overlay.classList.toggle('active')
+  imgOverlays.forEach(img => img.classList.toggle('active')); // Toggle for each image
+  decision_button.forEach(decision_button => decision_button.classList.toggle('active')); // Toggle for each image
+  popupTrigger.classList.toggle('active')
+  playerTotal.classList.toggle('active')
+  dealerTotal.classList.toggle('active')
 })
 
 
 
 //popup
 
-
-
 //open popup from difficulty button
 popupTrigger.addEventListener('click', () => {
 
-    if (popup.style.display === 'none'|| !overlay.classList.contains('active')) {
-        toggleBackground()
-        settings.classList.toggle('active')
-    }
-    popup.style.display = 'block'
-    // openTab(difficultyLabel.innerText.toLowerCase())
+  popup.forEach(popup => popup.style.display = 'none')
+  overlay.classList.remove('active')
+  toggleBackground()
+  settings.classList.toggle('active')
+
+  popup[currentIndex / 3].style.display = 'block';
+
 })
 
 //close popup from X button
-    function closePopup() {
-    if (popup.style.display === 'block' || overlay.classList.contains('active')) {
-        toggleBackground()
-        settings.classList.toggle('active')
-    }
-    popup.style.display = 'none'
-    }
-
+function closePopup() {
+  popup.forEach(popup => popup.style.display = 'none')
+  toggleBackground()
+  settings.classList.toggle('active')
+}
 
 
 function showTab(index) {
@@ -86,8 +78,8 @@ function showTab(index) {
 
 
 difficultySelectorEasy.addEventListener('click', () => {
-    showTab(0)
-  })
+  showTab(0)
+})
 
 difficultySelectorMedium.addEventListener('click', () => {
   showTab(1)
@@ -111,12 +103,12 @@ difficultySelectorSandbox.addEventListener('click', () => {
 
 
 function toggleBackground() {
-    overlay.classList.toggle('active')
-    imgOverlays.forEach(img => img.classList.toggle('active')); // Toggle for each image
-    decision_button.forEach(decision_button => decision_button.classList.toggle('active')); // Toggle for each image
-    popupTrigger.classList.toggle('active')
-    playerTotal.classList.toggle('active')
-    dealerTotal.classList.toggle('active')
+  overlay.classList.toggle('active')
+  imgOverlays.forEach(img => img.classList.toggle('active')); // Toggle for each image
+  decision_button.forEach(decision_button => decision_button.classList.toggle('active')); // Toggle for each image
+  popupTrigger.classList.toggle('active')
+  playerTotal.classList.toggle('active')
+  dealerTotal.classList.toggle('active')
 }
 
 //selcting and storing difficulty
@@ -125,8 +117,8 @@ difSelectButtonEasy.addEventListener('click', () => {
   closePopup()
 })
 difSelectButtonMedium.addEventListener('click', () => {
-    difficultyLabel.innerText = 'Medium'
-    closePopup()
+  difficultyLabel.innerText = 'Medium'
+  closePopup()
 })
 
 difSelectButtonHard.addEventListener('click', () => {
@@ -149,15 +141,20 @@ difSelectButtonSandbox.addEventListener('click', () => {
   closePopup()
 })
 
-closeButton.addEventListener('click', closePopup);
+closeButton[0].addEventListener('click', closePopup);
+closeButton[1].addEventListener('click', closePopup);
 
 
 prevButton.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+  popup[1].style.display = 'none';
+  popup[0].style.display = 'block';
+  currentIndex = 0;
   showTab(currentIndex);
 });
 
 nextButton.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % tabs.length;
+  popup[0].style.display = 'none';
+  popup[1].style.display = 'block';
+  currentIndex = 3;
   showTab(currentIndex);
 });
