@@ -11,7 +11,6 @@
     border-radius: 20px;
     padding: 20px;
     z-index: 100;
-
 }
 
 .tab {
@@ -37,13 +36,11 @@
 
 /* container of the descriptions of difficulties */
 .diff_popup_container {
-
     border: 3px solid var(--clr-darkred);
-    /* border-top: none; */
     border-radius: 25px;
     height: 70%;
     padding: 5px;
-    margin: 0, 25px, 25px, 25px;
+    margin: 12.5px;
 }
 
 /* X button */
@@ -53,8 +50,6 @@
     right: -10px;
     width: 40px;
     height: 40px;
-
-
 	padding: 5px;
     font-size: calc(15px + 1vw);
     align-self: center;
@@ -64,21 +59,4 @@
 	background-color: #d6440b;
 }
 
-/* 
 
-.task-delete {
-	display: inline-block;
-	padding: 5px 14px;
-	border-radius: 6px;
-	background-color: hsl(0deg 70% 47%);
-	font-size: calc(15px + 1vw);
-	color: #fff;
-	grid-area: close;
-	align-self: start;
-}
-
-.task-delete:hover {
-	background-color: hsl(0deg 70% 57%);
-}
-
-*/

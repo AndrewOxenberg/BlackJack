@@ -50,6 +50,14 @@
     z-index: 99;
 }
 
+.player_total.active, .dealer_total.active {
+    font-size: 0;
+}
+
+.player_total, .dealer_total {
+    font-size: var(--size--base);
+}
+
 img.active, .decision_button.active, .table_difficulty_button.active, .hamburger_button.active {
     transition: 0.2s;
     opacity: 0;
