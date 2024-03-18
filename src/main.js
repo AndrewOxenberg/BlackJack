@@ -48,6 +48,7 @@ settings.addEventListener('click', () => {
   popupTrigger.classList.toggle('active')
   playerTotal.classList.toggle('active')
   dealerTotal.classList.toggle('active')
+  closeNavbar()
 })
 
 
@@ -57,13 +58,10 @@ settings.addEventListener('click', () => {
 //open popup from difficulty button
 popupTrigger.addEventListener('click', () => {
 
-  // diffPopup.forEach(diffPopup => diffPopup.style.display = 'none')
   overlay.classList.remove('active')
   toggleBackground()
   settings.classList.add('active')
-
   diffPopup[currentIndex / 3].style.display = 'block';
-
 })
 
 //close popup from X button
@@ -115,8 +113,6 @@ function toggleBackground() {
   popupTrigger.classList.toggle('active')
   playerTotal.classList.toggle('active')
   dealerTotal.classList.toggle('active')
-
-  // settings.classList.toggle('active')
 }
 
 //selcting and storing difficulty
@@ -149,8 +145,6 @@ difSelectButtonSandbox.addEventListener('click', () => {
   closePopup()
 })
 
-// closeButton[0].addEventListener('click', closePopup);
-// closeButton[1].addEventListener('click', closePopup);
 
 closeButton.forEach(closeButton => closeButton.addEventListener('click', closePopup));
 
