@@ -1,3 +1,5 @@
+import { closeNavbar } from "./navbar.js"
+
 
 let settings = document.querySelector('.hamburger_button')
 let navbar = document.querySelector('.navbar_container')
@@ -8,7 +10,7 @@ let popupTrigger = document.querySelector('.table_difficulty_button')
 let closeButton = document.querySelectorAll('.close_button')
 let dealerTotal = document.querySelector('.dealer_total')
 let playerTotal = document.querySelector('.player_total')
-let popup = document.querySelectorAll('.difficulty_popup');
+let diffPopup = document.querySelectorAll('.difficulty_popup');
 
 let difficultySelectorEasy = document.querySelector('.dif_tab_button_easy')
 let difficultySelectorMedium = document.querySelector('.dif_tab_button_medium')
@@ -28,6 +30,8 @@ let difSelectButtonMaster = document.querySelector('.select_dif_button_master')
 let difSelectButtonSandbox = document.querySelector('.select_dif_button_sandbox')
 
 let difficultyLabel = document.querySelector('.difficulty_label')
+
+
 
 let currentIndex = 0;
 
@@ -53,20 +57,22 @@ settings.addEventListener('click', () => {
 //open popup from difficulty button
 popupTrigger.addEventListener('click', () => {
 
-  popup.forEach(popup => popup.style.display = 'none')
+  // diffPopup.forEach(diffPopup => diffPopup.style.display = 'none')
   overlay.classList.remove('active')
   toggleBackground()
-  settings.classList.toggle('active')
+  settings.classList.add('active')
 
-  popup[currentIndex / 3].style.display = 'block';
+  diffPopup[currentIndex / 3].style.display = 'block';
 
 })
 
 //close popup from X button
 function closePopup() {
-  popup.forEach(popup => popup.style.display = 'none')
+  diffPopup.forEach(diffPopup => diffPopup.style.display = 'none')
   toggleBackground()
-  settings.classList.toggle('active')
+  closeNavbar()
+  navbar.classList.remove('show_navbar')
+  settings.classList.remove('active')
 }
 
 
@@ -109,6 +115,8 @@ function toggleBackground() {
   popupTrigger.classList.toggle('active')
   playerTotal.classList.toggle('active')
   dealerTotal.classList.toggle('active')
+
+  // settings.classList.toggle('active')
 }
 
 //selcting and storing difficulty
@@ -141,20 +149,22 @@ difSelectButtonSandbox.addEventListener('click', () => {
   closePopup()
 })
 
-closeButton[0].addEventListener('click', closePopup);
-closeButton[1].addEventListener('click', closePopup);
+// closeButton[0].addEventListener('click', closePopup);
+// closeButton[1].addEventListener('click', closePopup);
+
+closeButton.forEach(closeButton => closeButton.addEventListener('click', closePopup));
 
 
 prevButton.addEventListener('click', () => {
-  popup[1].style.display = 'none';
-  popup[0].style.display = 'block';
+  diffPopup[1].style.display = 'none';
+  diffPopup[0].style.display = 'block';
   currentIndex = 0;
   showTab(currentIndex);
 });
 
 nextButton.addEventListener('click', () => {
-  popup[0].style.display = 'none';
-  popup[1].style.display = 'block';
+  diffPopup[0].style.display = 'none';
+  diffPopup[1].style.display = 'block';
   currentIndex = 3;
   showTab(currentIndex);
 });
