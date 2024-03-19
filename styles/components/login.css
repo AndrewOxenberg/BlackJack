@@ -1,20 +1,33 @@
+
 .login_container {
-    max-width: 500px;
     border: 3px solid var(--clr-darkred);
     border-radius: 10px;
     text-align: center;
-    padding: 100px;
+    padding: 30px;
 
 }
 
 .login_section {
     display: flex;
-    height: 80vh; /* 100% of the viewport height */
+    height: 60vh; 
     align-items: center;
     justify-content: center;
-    /* border: 1px solid red; */
 }
 
+
+
+
+
+/* md */
+@media (min-width: 768px) {
+    .login_container {
+        padding: 100px;
+    }
+    
+    .login_section {
+        height: 80vh; 
+    }
+}
 
 
 
