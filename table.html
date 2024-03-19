@@ -40,8 +40,8 @@
                     <p class="dealer_total">6</p>
                 </div>
                 <div class="table_dealers_cards">
-                    <img class="card card1" src="images/Default_Deck/6_of_spades.png" alt="6ofclubs">
-                    <img class="back card2" src="images/Default_Deck/back.png" alt="back">
+                    <img class="card card1" id="dealerCard1" src="images/Default_Deck/6_of_spades.png" alt="dealerCard1">
+                    <img class="back card2" id="dealerCard2" src="images/Default_Deck/back.png" alt="dealerBack">
                     <!-- need to deal an imaginary card to represent the dealer's hand -->
                 </div>
             </div>
@@ -56,8 +56,8 @@
                 </div>
 
                 <div class="table_players_hands">
-                    <img class="card card1" src="images/Default_Deck/king_of_hearts2.png" alt="suicide king">
-                    <img class="card card2" src="images/Default_Deck/ace_of_spades2.png" alt="ace">
+                    <img class="card card1" id="playerCard1" src="images/Default_Deck/king_of_hearts.png" alt="playerCard1">
+                    <img class="card card2" id="playerCard2" src="images/Default_Deck/ace_of_spades.png" alt="playerCard2">
                 </div>
                 <div class="player1_bet_circle">
                     <svg class="svg_circle">
@@ -75,6 +75,9 @@
                     <p>Hands: X</p>
                     <p>Streak: X</p>
                     <p>Accuracy: X</p>
+                    <button class="new_hand_button">New Hand</button>
+                    <button class="flip_dealer_card">Flip card</button>
+                    <p class="shuffle_text"></p>
                 </div>
             </div>
             <div class="child player2">
@@ -258,6 +261,7 @@
 
     <script type="module" src="./src/main.js"></script>
     <script type="module" src="./src/navbar.js"></script>
+    <script type="module" src="./src/dealingCards.js"></script>
 </body>
 
 </html>
