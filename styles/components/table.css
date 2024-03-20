@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 .difficulty {
     grid-area: difficulty;
 }
@@ -16,8 +20,6 @@
 
 .menu {
     grid-area: menu;
-    top: 0;
-    left: 0;
 }
 
 .decisions {
@@ -40,32 +42,29 @@
 .player1, .player2, .player3, .dealer, .decisions, .difficulty, .card1 {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
+    justify-content: center;
+    align-items: center;
 }
 
 .table_wrapper {
     display: grid;
     width: 100%;
     grid-template-columns: 2fr repeat(3, 3fr) 2fr;
-    grid-template-rows: 240px 300px 210px;
+    grid-template-rows: repeat(3, 28%);
     grid-template-areas:
         "difficulty . dealer stats menu"
         ". player2 player1 player3 decisions"
         "bankroll bankroll . . decisions";
-    /* border: 1px solid red; */
     gap: 10px;
 }
 
 
 
 .child {
-    
     margin: 5px;
     border: 1px solid black;
     padding: 1em;
     position: relative;
-
 }
 
 
@@ -76,7 +75,6 @@ circle {
 }
 
 .svg_circle {
-    /* border: 1px solid red; */
     width: 60px;
     height: 60px;
     display: flex;
@@ -85,13 +83,11 @@ circle {
 }
 
 .svg_rect {
-    /* border: 1px solid red; */
     width: 110px;
     height: 153px;
 }
 
 rect {
-
     fill: transparent;
     stroke: var(--clr-darkred);
     stroke-width: 3;
@@ -105,13 +101,12 @@ rect {
 
 .table_players_hands, .table_dealers_cards {
     position: absolute;
-    top: 14%; 
-    left: 35%;
+    top: 11%; 
+    left: 34%;
 }
 
 .card1 {
     position: absolute;
-    /* left: 20px; */
 }
 
 .card2 {
@@ -121,7 +116,6 @@ rect {
 
 
 .table_all_decisions {
-    /* border: 1px solid red; */
     z-index: -1;
     list-style-type: none;
     margin: 0px;
@@ -139,11 +133,260 @@ rect {
 }
 
 .player_total, .dealer_total {
-
     position: absolute;
     top: 20%;
     transform: translateY(-50%); 
     left: 15%; 
     font-size: var(--size--lg);
 }
+
+
+
+/* xs */
+@media (min-width: 320px) {
+    .chips {
+        width: 50px;
+        height: 50px;
+    }
+
+    .player_total, .dealer_total {
+        top: 3%;
+        left: 6%; 
+    }
+
+    .table_players_hands, .table_dealers_cards {
+        top: 15%; 
+        left: 15%;
+    }
+
+    .svg_rect {
+        height: 85px;
+        width: 60px;
+    }
+    
+    rect {
+        height: 85px;
+        width: 60px;
+    }
+
+    .table_players_hands, .table_dealers_cards {
+        top: 22%; 
+        left: 20%;
+    }
+
+    .card {
+        height: 85px;
+        width: 60px;
+    }
+
+    .back {
+        height: 85px;
+        width: 60px;
+    }
+    .card2 {
+        left: 10px;
+    }
+
+    
+}
+
+/* sm */
+@media (min-width: 425px) {
+
+    .svg_rect {
+        height: 85px;
+        width: 60px;
+    }
+    
+    rect {
+        height: 85px;
+        width: 60px;;
+    }
+
+    .table_players_hands, .table_dealers_cards {
+        top: 22%; 
+        left: 20%;
+    }
+
+    .card {
+        height: 85px;
+        width: 60px;
+    }
+
+    .back {
+        height: 85px;
+        width: 60px;
+    }
+
+    .player_total, .dealer_total {
+        top: 5%;
+        left: 11%; 
+    }
+
+    .chips {
+        width: 40px;
+        height: 40px;
+    }
+
+    .table_wrapper {
+        grid-template-rows: repeat(3, 27%);
+        gap: 8px;
+    }
+    .card2 {
+        left: 13px;
+    }
+    .card2 {
+        left: 13px;
+    }
+
+    p {
+        font-size: 10px;
+    }
+
+}
+
+/* md */
+@media (min-width: 768px) {
+ 
+    .svg_rect {
+        height: 100px;
+        width: 71px;
+    }
+    
+    rect {
+        stroke-width: 3;
+        height: 100px;
+        width: 71px;
+    }
+
+    .table_players_hands, .table_dealers_cards {
+        top: 19%; 
+        left: 28%;
+    }
+
+    .card {
+        height: 100px;
+        width: 71px;
+    }
+
+    .back {
+        height: 100px;
+        width: 71px;
+    }
+
+    .player_total, .dealer_total {
+        top: 25%;
+        left: 4%; 
+    }
+
+    .chips {
+        width: 50px;
+        height: 50px;
+    }
+
+    .table_wrapper {
+        grid-template-rows: repeat(3, 27%);
+        gap: 8px;
+    }
+    
+
+    .child {
+        padding: 1em;
+    }
+
+    p {
+        font-size: var(--size--lg);
+    }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+    
+    .svg_rect {
+        height: 125px;
+        width: 89px;
+    }
+    
+    rect {
+        stroke-width: 3;
+        height: 125px;
+        width: 89px;
+    }
+
+    .table_players_hands, .table_dealers_cards {
+        top: 13%; 
+        left: 31%;
+    }
+
+    .card {
+        height: 125px;
+        width: 89px;
+    }
+
+    .back {
+        height: 125px;
+        width: 89px;
+    }
+
+    .player_total, .dealer_total {
+        top: 25%;
+        left: 8%; 
+    }
+
+    .chips {
+        width: 40px;
+        height: 40px;
+    }
+    .card2 {
+        left: 18px;
+    }
+
+}
+
+/* xl */
+@media (min-width: 1440px) {
+    
+    .svg_rect {
+        width: 110px;
+        height: 153px;
+    }
+    
+    rect {
+        stroke-width: 3;
+        height: 153px;
+        width: 110px;
+    }
+    
+    .card {
+        width: 110px;
+        height: 155px;
+    }
+
+    .back {
+        width: 110px;
+        height: 155px;
+    }
+
+    .table_players_hands, .table_dealers_cards {
+        top: 9%; 
+        left: 34%;
+    }
+    
+    
+    .player_total, .dealer_total {
+        top: 20%;
+        left: 15%; 
+    }
+
+    .chips {
+        width: 70px;
+        height: 70px;
+    }
+    .card2 {
+        left: 20px;
+    }
+  
+}
+
+
 
