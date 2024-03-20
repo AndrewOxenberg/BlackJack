@@ -3,14 +3,45 @@
     border: 3px solid var(--clr-darkred);
     border-radius: 10px;
     text-align: center;
-    padding: 100px;
+    padding: 30px;
 
 }
 
 .signup_section {
     display: flex;
-    height: 80vh; /* 100% of the viewport height */
+    height: 60vh;
     align-items: center;
     justify-content: center;
-    /* border: 1px solid red; */
 }
+
+
+/* xs */
+/* @media (min-width: 320px) {
+   
+} */
+
+/* sm */
+/* @media (min-width: 425px) {
+   
+} */
+
+/* md */
+@media (min-width: 768px) {
+    .signup_container {
+        padding: 100px;
+    }
+    
+    .signup_section {
+        height: 80vh;
+    }
+}
+
+/* lg */
+/* @media (min-width: 1024px) {
+    
+} */
+
+/* xl */
+/* @media (min-width: 1440px) {
+   
+} */

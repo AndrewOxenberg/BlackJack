@@ -26,7 +26,7 @@ let currentDeck = shuffleCards();
 
 
 //call newHand on refresh
-// newHand()
+newHand()
 
 
 // when new hand button is clicked, 4 new cards should be dealt to the player and dealer, dealer2 card is accoutned for but
