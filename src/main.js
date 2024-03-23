@@ -11,6 +11,7 @@ let closeButton = document.querySelectorAll('.close_button')
 let dealerTotal = document.querySelector('.dealer_total')
 let playerTotal = document.querySelector('.player_total')
 let diffPopup = document.querySelectorAll('.difficulty_popup');
+let answerText = document.querySelector('.answer_text')
 
 let difficultySelectorEasy = document.querySelector('.dif_tab_button_easy')
 let difficultySelectorMedium = document.querySelector('.dif_tab_button_medium')
@@ -48,6 +49,7 @@ settings.addEventListener('click', () => {
   popupTrigger.classList.toggle('active')
   playerTotal.classList.toggle('active')
   dealerTotal.classList.toggle('active')
+  answerText.classList.toggle('active')
   closeNavbar()
 })
 
@@ -113,6 +115,7 @@ function toggleBackground() {
   popupTrigger.classList.toggle('active')
   playerTotal.classList.toggle('active')
   dealerTotal.classList.toggle('active')
+  answerText.classList.toggle('active')
 }
 
 //selcting and storing difficulty

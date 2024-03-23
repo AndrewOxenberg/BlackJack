@@ -31,6 +31,7 @@
     transition: 0.3s;
     background-color: var(--clr-slate400);
     opacity: 0.6;
+    z-index: 10;
 }
 
 .overlay {
@@ -38,6 +39,7 @@
     width: 100%;
     height: 100%;
     transition: 0.2s;
+    z-index: 0;
 }
 
 .overlay.active {
@@ -58,7 +60,7 @@
     font-size: var(--size--base);
 }
 
-img.active, .decision_button.active, .table_difficulty_button.active, .hamburger_button.active {
+img.active, .decision_button.active, .table_difficulty_button.active, .hamburger_button.active, .answer_text.active {
     transition: 0.2s;
     opacity: 0;
 }
@@ -70,6 +72,14 @@ img.active, .decision_button.active, .table_difficulty_button.active, .hamburger
 .decision_button, .table_difficulty_button, .hamburger_button {
     pointer-events: all;
 }
+
+.answer_text {
+    position: absolute;
+    top: 5%;
+    opacity: 1;
+}
+
+
 
 
 

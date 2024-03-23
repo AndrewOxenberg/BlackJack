@@ -72,9 +72,9 @@
 
             <div class="child stats">
                 <div class="table_stats">
-                    <p>Hands: X</p>
-                    <p>Streak: X</p>
-                    <p>Accuracy: X</p>
+                    <p class="hands_text">Hands: 0</p>
+                    <p class="streak_text">Streak: 0</p>
+                    <p class="accuracy_text">Accuracy: 0.0%</p>
                     <button class="new_hand_button">New Hand</button>
                     <button class="flip_dealer_card">Flip card</button>
                     <p class="shuffle_text"></p>
@@ -137,24 +137,26 @@
 
 
             <div class="child decisions">
+                <p class="answer_text"></p>
+
                 <ul class="table_all_decisions">
                     <li class="table_decision">
-                        <button class="decision_button">Hit</button>
+                        <button class="decision_button" id="hit" >Hit</button>
                     </li>
                     <li class="table_decision">
-                        <button class="decision_button">Stand</button>
+                        <button class="decision_button" id="stand" >Stand</button>
                     </li>
                     <li class="table_decision">
-                        <button class="decision_button">Split</button>
+                        <button class="decision_button" id="split" >Split</button>
                     </li>
                     <li class="table_decision">
-                        <button class="decision_button">Double Down</button>
+                        <button class="decision_button" id="double"  >Double Down</button>
                     </li>
                     <li class="table_decision">
-                        <button class="decision_button">Surrender</button>
+                        <button class="decision_button" id="surrender" >Surrender</button>
                     </li>
                     <li class="table_decision">
-                        <button class="decision_button">Insurance</button>
+                        <button class="decision_button" id="insurance" >Insurance</button>
                     </li>
                 </ul>
             </div>
@@ -263,6 +265,7 @@
     <script type="module" src="./src/navbar.js"></script>
     <script type="module" src="./src/dealingCards.js"></script>
     <script type="module" src="./src/tableResizing.js"></script>
+    <script type="module" src="./src/strategy/4deckStandOn17.js"></script>
 </body>
 
 </html>
