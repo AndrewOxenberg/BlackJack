@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/components/login.css">
+    <!-- Correct paths for static files served from 'public' -->
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/components/login.css">
 
     <title>BlackJack Mastery</title>
 </head>
@@ -26,7 +27,6 @@
             </form>
             <button><a href="table.html">Play!</a></button>
 
-
             <h4>New player? <a href="signup.html">Sign up!</a></h4>
             <h5><a href="table.html">Play as Guest</a></h5>
 
@@ -34,9 +34,8 @@
         </div>
     </section>
 
-
-
-    <script type="module" src="./src/main.js"></script>
+    <!-- Correct path for JavaScript -->
+    <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>

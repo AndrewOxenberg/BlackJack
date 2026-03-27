@@ -51,22 +51,22 @@ function newHand() {
     updateStats()
     handsNum++;
 
-    //sets all player card images
+    //sets all player card ../images
     playerCard1String = currentDeck.pop()
     playerCard1Value = getValueOfCard(playerCard1String)
-    playerCard1Pic.src = `images/Default_Deck/${playerCard1String}.png`
+    playerCard1Pic.src = `/images/Default_Deck/${playerCard1String}.png`
 
     playerCard2String = currentDeck.pop()
     playerCard2Value = getValueOfCard(playerCard2String)
-    playerCard2Pic.src = `images/Default_Deck/${playerCard2String}.png`
+    playerCard2Pic.src = `/images/Default_Deck/${playerCard2String}.png`
 
     dealerCard1String = currentDeck.pop()
     dealerCard1Value = getValueOfCard(dealerCard1String)
-    dealerCard1Pic.src = `images/Default_Deck/${dealerCard1String}.png`
+    dealerCard1Pic.src = `/images/Default_Deck/${dealerCard1String}.png`
 
     dealerCard2String = currentDeck.pop()
     dealerCard2Value = getValueOfCard(dealerCard2String)
-    dealerCard2Pic.src = `images/Default_Deck/back.png`
+    dealerCard2Pic.src = `/images/Default_Deck/back.png`
 
 
     playerTotal.textContent = playerCard1Value + playerCard2Value
@@ -84,7 +84,7 @@ function newHand() {
 }
 
 flipCardBtn.addEventListener('click', () => {
-    dealerCard2Pic.src = `images/Default_Deck/${dealerCard2String}.png`
+    dealerCard2Pic.src = `/images/Default_Deck/${dealerCard2String}.png`
     dealerTotal.innerText = dealerCard1Value + dealerCard2Value
 })
 
