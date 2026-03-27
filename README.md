@@ -4,7 +4,7 @@ Blackjack Mastery is an interactive web application designed to help players lea
 
 Players can log in, create an account, or play as a guest to start practicing. The game interface simulates a real blackjack table with dealer and player hands, betting chips, and common blackjack decisions such as hit, stand, split, double down, surrender, and insurance.
 
-![Blackjack Table](screenshots\Main_Screen.png)
+![Blackjack Table](screenshots/Main_Screen.png)
 
 Features
 * Interactive blackjack table interface
@@ -14,7 +14,7 @@ Features
 * Guest mode and user signup/login
 * Menu with stats, achievements, leaderboard, and settings
 
-![Blackjack Table](screenshots\Difficulty.png)
+![Blackjack Table](screenshots/Difficulty.png)
 
 Tech Stack
 * HTML
